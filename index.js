@@ -10,7 +10,8 @@ app.get('/words', function(req, res, next) {
   axios.get('http://app.linkedin-reach.io/words')
     .then((response)=> {
       const data = response.data; 
-      res.send(data);
+
+      res.json(data);
     })
     .catch((err) => {
       next(err);
